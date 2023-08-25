@@ -12,14 +12,14 @@ const user = createSlice({
   initialState,
 
   reducers: {
-    updateUserId: (state, action) => {
+    updateScore: (state, action) => {
       state.score = action.payload;
     },
   },
 });
 
 // Action Creators
-export const { updateUserId } = user.actions;
+export const { updateScore } = user.actions;
 
 // Reducer
 export default user.reducer;
