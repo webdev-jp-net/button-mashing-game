@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 type State = {
-  score?: number;
+  score: number;
 };
 
-const initialState: State = {};
+const initialState: State = {
+  score: 0,
+};
 
 const user = createSlice({
   name: 'user',
