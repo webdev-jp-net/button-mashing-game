@@ -1,5 +1,7 @@
 # Simple Button Mashing Game
 
+💥 [Demo Program](https://button-mashing-game.vercel.app/)
+
 ## Setup
 
 ```
