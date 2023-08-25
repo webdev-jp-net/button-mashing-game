@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/ban-ts-comment: 0 */
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -21,6 +21,22 @@ export const Play: FC = () => {
 
   // 残り時間
   const [timeLeft, setTimeLeft] = useState<number>(60);
+
+  // カウントダウンの処理
+  useEffect(() => {
+    let timerID: NodeJS.Timeout | undefined;
+    if (timeLeft > 0) {
+      timerID = setInterval(() => {
+        setTimeLeft(timeLeft => timeLeft - 1);
+      }, 1000);
+    } else {
+      clearInterval(timerID!);
+      // リザルト画面への遷移等の処理
+    }
+    return () => {
+      clearInterval(timerID!);
+    };
+  }, [timeLeft]);
 
   // スコアを加算
   const handleMashing = () => {
