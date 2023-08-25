@@ -1,10 +1,8 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-import hogefuga from './hogefuga';
 import user from './user';
 
 const reducer = combineReducers({
-  hogefuga,
   user,
 });
 

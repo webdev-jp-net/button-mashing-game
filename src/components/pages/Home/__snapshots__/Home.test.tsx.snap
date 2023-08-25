@@ -5,13 +5,11 @@ exports[`Home Homeのスナップショット 1`] = `
   <div
     class="l-page home"
   >
-    <h1>
-      HOME
+    <h1
+      class="title"
+    >
+      button mashing
     </h1>
-    <p>
-      ここへページの内容を表示
-    </p>
-    <p />
     <div
       class="menu"
     >
@@ -19,7 +17,7 @@ exports[`Home Homeのスナップショット 1`] = `
         class="button --basic"
         type="button"
       >
-        1のページへ移動
+        start
       </button>
     </div>
   </div>

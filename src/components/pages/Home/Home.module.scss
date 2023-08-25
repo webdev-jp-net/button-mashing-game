@@ -1,11 +1,18 @@
 @use 'style/_variable' as *;
 
 .home {
-  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
+.title {
+  text-align: center;
 }
 
 .menu {
   display: grid;
   gap: rem(18) rem(12);
   padding: rem(24);
+  margin: rem(60) 0 0;
 }
