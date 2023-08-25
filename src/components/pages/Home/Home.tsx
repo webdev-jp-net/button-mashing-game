@@ -20,7 +20,7 @@ import styles from './Home.module.scss';
 export const Home: FC = () => {
   const navigate = useNavigate();
 
-  const { userId } = useSelector((state: RootState) => state.user);
+  const { score } = useSelector((state: RootState) => state.user);
 
   // ページを表示したとき
   useEffect(() => {
@@ -34,7 +34,7 @@ export const Home: FC = () => {
     <div className={`l-page ${styles.home}`}>
       <h1>HOME</h1>
       <p>ここへページの内容を表示</p>
-      <p>{userId}</p>
+      {score && <p>score: {score}</p>}
       <div className={styles.menu}>
         <Button
           handleClick={() => {

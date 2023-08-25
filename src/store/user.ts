@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 type State = {
-  userId?: string;
+  score?: number;
 };
 
 const initialState: State = {};
@@ -13,7 +13,7 @@ const user = createSlice({
 
   reducers: {
     updateUserId: (state, action) => {
-      state.userId = action.payload;
+      state.score = action.payload;
     },
   },
 });

@@ -1,3 +1,13 @@
-# LIFF アプリ開発セット（React+TypeScript）
+# Simple Button Mashing Game
 
-LIFF アプリケーションを開発するプロジェクトのサンプルです。
+## Setup
+
+```
+npm ci
+```
+
+## Run
+
+```
+HTTPS=true npm run watch
+```
