@@ -1,22 +1,45 @@
 @use 'style/_variable' as *;
 
 .play {
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    user-select: none;
+  }
+}
+
+.header {
+  display: flex;
+  gap: rem(18) rem(12);
+  padding: rem(24);
+}
+
+.time {
+  width: 4em;
+}
+
+.tap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: $c_dark;
+  background: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.result {
+  display: grid;
+  place-items: center;
+  height: 100%;
 }
 
 .menu {
   display: grid;
   gap: rem(18) rem(12);
   padding: rem(24);
-}
-
-.field {
-  display: grid;
-  gap: rem(18) rem(12);
-  padding: rem(24);
-}
-
-.preview {
-  padding: 0.5em;
-  background: $c_bg;
+  margin: auto 0 0;
 }

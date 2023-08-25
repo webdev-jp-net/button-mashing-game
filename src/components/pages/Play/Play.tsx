@@ -19,40 +19,41 @@ export const Play: FC = () => {
   const navigate = useNavigate();
   const { score } = useSelector((state: RootState) => state.user);
 
-  const [tmpValue, setTmpValue] = useState<string>('');
+  // 残り時間
+  const [timeLeft, setTimeLeft] = useState<number>(60);
 
-  // テキスト更新
-  const updateValue = () => {
-    dispatch(updateScore((score || 0) + 1));
+  // スコアを加算
+  const handleMashing = () => {
+    dispatch(updateScore(score + 1));
   };
 
   // ページタイトル
-  usePageTitle(`subページ`);
+  usePageTitle(`button mashing ... playing`);
 
   return (
-    <div className={`l-page ${styles.sub}`}>
-      <div className={styles.menu}>
-        <Button
-          handleClick={() => {
-            navigate('/');
-          }}
-        >
-          HOMEへ移動
-        </Button>
-      </div>
-      <hr />
-      <div className={styles.field}>
-        <p>文字をinputで書き換えられます</p>
-        <p className={styles.preview}>{score}</p>
-        <input
-          placeholder="更新ボタンで入力した文字が表示されます"
-          type="text"
-          onInput={e => {
-            setTmpValue(e.currentTarget.value);
-          }}
-        />
-        <Button handleClick={updateValue}>更新</Button>
-      </div>
+    <div className={`l-page ${styles.play}`}>
+      {timeLeft > 0 ? (
+        <div className={styles.header}>
+          <p className={styles.time}>⏱️ {timeLeft}</p>
+          <p className={styles.score}>💥 {score}</p>
+          <button type="button" onClick={handleMashing} className={styles.tap}>
+            Tap Here!!
+          </button>
+        </div>
+      ) : (
+        <>
+          <p className={styles.result}>{score}</p>
+          <div className={styles.menu}>
+            <Button
+              handleClick={() => {
+                navigate('/');
+              }}
+            >
+              exit
+            </Button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
