@@ -3,45 +3,26 @@
 exports[`Play Playのスナップショット 1`] = `
 <DocumentFragment>
   <div
-    class="l-page sub"
+    class="l-page play"
   >
-    <h1>
-       のページ
-    </h1>
-    <p>
-      ここへページの内容を表示
-    </p>
     <div
-      class="menu"
+      class="header"
     >
-      <button
-        class="button --basic"
-        type="button"
+      <p
+        class="time"
       >
-        HOMEへ移動
-      </button>
-    </div>
-    <hr />
-    <div
-      class="field"
-    >
-      <p>
-        文字をinputで書き換えられます
+        ⏱️ 60
       </p>
       <p
-        class="preview"
+        class="score"
       >
-        ダミーテキスト
+        💥 0
       </p>
-      <input
-        placeholder="更新ボタンで入力した文字が表示されます"
-        type="text"
-      />
       <button
-        class="button --basic"
+        class="tap"
         type="button"
       >
-        更新
+        Tap Here!!
       </button>
     </div>
   </div>
