@@ -5,6 +5,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Montserrat:wght@800&display=swap');
 
 body {
+  height: 100dvh;
   min-height: 100%;
   margin: 0;
   font-family: 'Hiragino Kaku Gothic ProN', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
@@ -25,7 +26,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.l-body {
+[id='root'],
+.l-page {
   position: relative;
   z-index: 1;
+  height: 100%;
 }
+
