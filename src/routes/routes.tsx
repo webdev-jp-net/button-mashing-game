@@ -1,24 +1,17 @@
 import { FC } from 'react';
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
+import { Home } from 'components/pages/Home';
+import { Sub } from 'components/pages/Sub';
 
-import { RootState } from 'store';
-
-import { useAuthLiff } from 'hooks/useAuthLiff';
-
-import { Private } from './private';
-
-export const Routes: FC = () => {
-  useAuthLiff(); // LIFFにログインする
-
-  const { userId } = useSelector((state: RootState) => state.user);
-  return userId ? (
+export const App: FC = () => {
+  return (
     <BrowserRouter>
-      <Private />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sub/:id" element={<Sub />} />
+      </Routes>
     </BrowserRouter>
-  ) : (
-    <p>login ...</p>
   );
 };

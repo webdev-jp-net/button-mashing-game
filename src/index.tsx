@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 
 import { createRoot } from 'react-dom/client';
 
-import { Routes } from './routes/routes';
+import { App } from './routes/routes';
 import { store } from './store/index';
 
 import './style/index.scss';
@@ -13,6 +13,6 @@ const root = createRoot(container);
 
 root.render(
   <Provider store={store}>
-    <Routes />
+    <App />
   </Provider>
 );
