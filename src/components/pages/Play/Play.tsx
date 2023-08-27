@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Button } from 'components/parts/Button';
+import { GaugeUi } from 'components/parts/GaugeUi';
 import { TimeLeftUi } from 'components/parts/TimeLeftUi';
 import { RootState } from 'store';
 import { updateScore } from 'store/user';
@@ -49,6 +50,21 @@ export const Play: FC = () => {
 
   return (
     <div className={`l-page ${styles.play}`}>
+      <div className={styles.visualizer}>
+        <div className={styles.stock}>
+          {Array(Math.floor(score / 100))
+            .fill(0)
+            .map((_, index) => (
+              <span key={index} className={styles.stockItem}>
+                🍺
+              </span>
+            ))}
+          <GaugeUi
+            addClass={[styles.gauge, currentTime >= limit ? styles['--invisible'] : '']}
+            currentValue={score % 100}
+          />
+        </div>
+      </div>
       {currentTime < limit ? (
         <div className={styles.header}>
           <TimeLeftUi currentTime={currentTime} />
