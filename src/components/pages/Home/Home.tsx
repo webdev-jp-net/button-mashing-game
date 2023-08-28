@@ -9,8 +9,6 @@ import reportWebVitals from 'reportWebVitals';
 import { Button } from 'components/parts/Button';
 import { updateScore } from 'store/user';
 
-import { usePageTitle } from 'hooks/usePageTitle';
-
 import styles from './Home.module.scss';
 
 export const Home: FC = () => {
@@ -24,12 +22,9 @@ export const Home: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // ページタイトル
-  usePageTitle(`button mashing`);
-
   return (
     <div className={`l-page ${styles.home}`}>
-      <h1 className={styles.title}>button mashing</h1>
+      <h1 className={styles.title}>Tap Frenzy!</h1>
       <div className={styles.menu}>
         <Button
           handleClick={() => {
@@ -38,6 +33,7 @@ export const Home: FC = () => {
         >
           start
         </Button>
+        <div className={styles.icon}>👆</div>
       </div>
     </div>
   );

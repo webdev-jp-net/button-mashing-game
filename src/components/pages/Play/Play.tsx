@@ -11,8 +11,6 @@ import { TimeLeftUi } from 'components/parts/TimeLeftUi';
 import { RootState } from 'store';
 import { updateScore } from 'store/user';
 
-import { usePageTitle } from 'hooks/usePageTitle';
-
 import styles from './Play.module.scss';
 
 export const Play: FC = () => {
@@ -44,9 +42,6 @@ export const Play: FC = () => {
   const handleMashing = () => {
     dispatch(updateScore(score + 1));
   };
-
-  // ページタイトル
-  usePageTitle(`button mashing ... playing`);
 
   return (
     <div className={`l-page ${styles.play}`}>

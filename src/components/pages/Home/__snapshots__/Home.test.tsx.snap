@@ -8,7 +8,7 @@ exports[`Home Homeのスナップショット 1`] = `
     <h1
       class="title"
     >
-      button mashing
+      Tap Frenzy!
     </h1>
     <div
       class="menu"
@@ -19,6 +19,11 @@ exports[`Home Homeのスナップショット 1`] = `
       >
         start
       </button>
+      <div
+        class="icon"
+      >
+        👆
+      </div>
     </div>
   </div>
 </DocumentFragment>
