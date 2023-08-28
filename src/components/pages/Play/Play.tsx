@@ -11,8 +11,6 @@ import { TimeLeftUi } from 'components/parts/TimeLeftUi';
 import { RootState } from 'store';
 import { updateScore } from 'store/user';
 
-import { usePageTitle } from 'hooks/usePageTitle';
-
 import styles from './Play.module.scss';
 
 export const Play: FC = () => {
@@ -45,9 +43,6 @@ export const Play: FC = () => {
     dispatch(updateScore(score + 1));
   };
 
-  // ページタイトル
-  usePageTitle(`button mashing ... playing`);
-
   return (
     <div className={`l-page ${styles.play}`}>
       <div className={styles.visualizer}>
@@ -59,10 +54,12 @@ export const Play: FC = () => {
                 🍺
               </span>
             ))}
-          <GaugeUi
-            addClass={[styles.gauge, currentTime >= limit ? styles['--invisible'] : '']}
-            currentValue={score % 100}
-          />
+          {score > 0 && (
+            <GaugeUi
+              addClass={[styles.gauge, currentTime >= limit ? styles['--invisible'] : '']}
+              currentValue={score % 100}
+            />
+          )}
         </div>
       </div>
       {currentTime < limit ? (
@@ -70,7 +67,7 @@ export const Play: FC = () => {
           <TimeLeftUi currentTime={currentTime} />
           <p className={styles.score}>💥 {score}</p>
           <button type="button" onClick={handleMashing} className={styles.tap}>
-            Tap Here!!
+            Tap Screen!!
           </button>
         </div>
       ) : (

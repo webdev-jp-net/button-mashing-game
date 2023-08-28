@@ -10,9 +10,15 @@
   text-align: center;
 }
 
+.icon {
+  display: grid;
+  place-items: center;
+  font-size: rem(60);
+  line-height: 1;
+}
+
 .menu {
   display: grid;
   gap: rem(18) rem(12);
   padding: rem(24);
-  margin: rem(60) 0 0;
 }

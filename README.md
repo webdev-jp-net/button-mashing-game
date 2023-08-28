@@ -1,4 +1,4 @@
-# Simple Button Mashing Game
+# Tap Frenzy!
 
 💥 [Demo Program](https://button-mashing-game.vercel.app/)
 
