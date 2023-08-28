@@ -12,17 +12,16 @@
 .visualizer {
   position: absolute;
   top: rem(120);
-  right: rem(36);
-  left: rem(36);
-  display: flex;
-  flex-wrap: wrap;
+  right: rem(24);
+  left: rem(24);
+  display: grid;
   align-items: end;
-  height: rem(94);
 }
 
 .stock {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: rem(24) 0;
   align-items: end;
   height: 1;
   margin: rem(12) 0;
@@ -37,10 +36,14 @@
 .gauge {
   width: rem(36);
   height: rem(60);
-  margin: 0 0 0 rem(24);
+  margin: 0 rem(12);
 
   &.--invisible {
     opacity: 0;
+  }
+
+  &:not(:first-child) {
+    // margin: 0 0 0 rem(24);
   }
 }
 
