@@ -41,10 +41,6 @@
   &.--invisible {
     opacity: 0;
   }
-
-  &:not(:first-child) {
-    // margin: 0 0 0 rem(24);
-  }
 }
 
 .header {
@@ -57,6 +53,20 @@
   width: 4em;
 }
 
+// tapエフェクト
+// 円が広がりながらフェードアウトするキーフレームアニメーション
+@keyframes tap {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 .tap {
   position: absolute;
   top: 0;
@@ -67,6 +77,29 @@
   background: transparent;
   border: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+.effect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: rem(36);
+  height: rem(36);
+  margin: auto;
+  pointer-events: none;
+  content: '';
+  user-select: none;
+  background-color: #f4981f80;
+  border-radius: 50%;
+  opacity: 0;
+
+  .--tap & {
+    animation: tap 0.3s ease-out;
+  }
 }
 
 .result {
