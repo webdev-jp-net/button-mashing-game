@@ -72,7 +72,7 @@ export const Play: FC = () => {
           <TimeLeftUi currentTime={currentTime} />
           <p className={styles.score}>💥 {score}</p>
           <button type="button" onClick={handleMashing} className={styles.tap}>
-            Tap Here!!
+            Tap Screen!!
           </button>
         </div>
       ) : (

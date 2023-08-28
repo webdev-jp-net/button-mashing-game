@@ -48,7 +48,7 @@ exports[`Play Playのスナップショット 1`] = `
         class="tap"
         type="button"
       >
-        Tap Here!!
+        Tap Screen!!
       </button>
     </div>
   </div>
