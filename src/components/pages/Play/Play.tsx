@@ -59,10 +59,12 @@ export const Play: FC = () => {
                 🍺
               </span>
             ))}
-          <GaugeUi
-            addClass={[styles.gauge, currentTime >= limit ? styles['--invisible'] : '']}
-            currentValue={score % 100}
-          />
+          {score > 0 && (
+            <GaugeUi
+              addClass={[styles.gauge, currentTime >= limit ? styles['--invisible'] : '']}
+              currentValue={score % 100}
+            />
+          )}
         </div>
       </div>
       {currentTime < limit ? (

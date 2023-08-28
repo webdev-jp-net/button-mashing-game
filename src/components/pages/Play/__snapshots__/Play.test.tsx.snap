@@ -10,16 +10,7 @@ exports[`Play Playのスナップショット 1`] = `
     >
       <div
         class="stock"
-      >
-        <div
-          class="gaugeUi gauge "
-        >
-          <div
-            class="currentValue"
-            style="height: 0%;"
-          />
-        </div>
-      </div>
+      />
     </div>
     <div
       class="header"
